@@ -309,7 +309,8 @@ public class MainActivity extends AppCompatActivity
         // Define marker options
         MarkerOptions markerOptions = new MarkerOptions()
                 .position(latLng)
-                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE))
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE))//orange color marker for geonfence to
+                // differentiate from location marker which is normal red
                 .title(title);
         if (map != null) {
             // Remove last geoFenceMarker
@@ -322,6 +323,8 @@ public class MainActivity extends AppCompatActivity
     }
 
     // Start Geofence creation process
+    //geofence is started only from the options menu so don't forget to
+    // click start geofence button when the app starts
     private void startGeofence() {
         Log.i(TAG, "startGeofence()");
         if (geoFenceMarker != null) {
