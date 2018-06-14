@@ -41,6 +41,21 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+
+/**
+ * tutorial link - https://code.tutsplus.com/tutorials/how-to-work-with-geofences-on-android--cms-26639
+ *   how to test this app
+ * - if you are running this app on emulator,
+ *   go to settings --> location and making sure I select the mode for high accuracy fixed this issue.
+ * - now run the app
+ * - first you will be provided with only one marker which is your current location
+ * - click somewhere in the map, some distance from the marker of your location (another marker will appear)
+ * - this marker is the center point for your geofence
+ * - now click on options menu and click create geofence
+ * - now from the options menu of the emulator hardware change the lat and log value to simulate entry and exit of your current location
+ * - you will be able to see notification of entry and exit
+ * */
+
 public class MainActivity extends AppCompatActivity
         implements
         GoogleApiClient.ConnectionCallbacks,
@@ -338,7 +353,7 @@ public class MainActivity extends AppCompatActivity
 
     private static final long GEO_DURATION = 60 * 60 * 1000;
     private static final String GEOFENCE_REQ_ID = "My Geofence";
-    private static final float GEOFENCE_RADIUS = 500.0f; // in meters
+    private static final float GEOFENCE_RADIUS = 200.0f; // in meters
 
     // Create a Geofence
     private Geofence createGeofence(LatLng latLng, float radius) {
